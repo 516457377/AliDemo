@@ -5,47 +5,166 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
     android:fitsSystemWindows="true"
     tools:context="com.lh.alidemo.MainActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/colllayout"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="200dp"
             app:contentScrim="?attr/colorPrimary"
-            app:statusBarScrim="@android:color/holo_purple"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:statusBarScrim="@android:color/holo_purple">
             <LinearLayout android:layout_width="match_parent"
-                          android:layout_height="50dp"
-                          app:layout_collapseMode="none">
-                <Button android:layout_width="180dp"
-                        android:layout_height="wrap_content"
-                        android:text="long btn"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent"
-                          android:layout_height="50dp"
+                          android:layout_height="150dp"
                           android:layout_gravity="bottom"
+                          android:gravity="center"
+                          android:orientation="horizontal"
                           app:layout_collapseMode="pin">
-                <Button android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="img1"/>
+                        android:src="@mipmap/img_sao"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginTop="20dp"
+                              android:text="扫一扫"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/img_fu"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginTop="20dp"
+                              android:text="付款"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/img_ka"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginTop="20dp"
+                              android:text="卡卷"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/img_gps"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginTop="20dp"
+                              android:text="定位"/>
+
+                </LinearLayout>
 
             </LinearLayout>
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                app:layout_collapseMode="pin"/>
+                app:layout_collapseMode="pin">
+                <LinearLayout
+                    android:id="@+id/lin2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+                    <Button android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:background="@drawable/btn_shape"
+                            android:text="long btn"/>
+                    <ImageButton android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_margin="10dp"
+                                 android:layout_weight="1"
+                                 android:background="@null"
+                                 android:scaleType="fitCenter"
+                                 android:src="@mipmap/user"/>
+                    <ImageButton android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_margin="10dp"
+                                 android:layout_weight="1"
+                                 android:background="@null"
+                                 android:scaleType="fitCenter"
+                                 android:src="@mipmap/add"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent"
+                              android:layout_height="50dp"
+                              android:orientation="horizontal">
+                    <ImageButton android:layout_width="50dp"
+                                 android:layout_height="wrap_content"
+                                 android:background="@null"
+                                 android:scaleType="fitCenter"
+                                 android:src="@mipmap/samle_sao"/>
+                    <View android:layout_width="30dp"
+                          android:layout_height="0dp"/>
+                    <ImageButton android:layout_width="50dp"
+                                 android:layout_height="wrap_content"
+                                 android:background="@null"
+                                 android:padding="5dp"
+                                 android:scaleType="fitCenter"
+                                 android:src="@mipmap/smale_tiao"/>
+                    <View android:layout_width="30dp"
+                          android:layout_height="0dp"/>
+                    <ImageButton android:layout_width="50dp"
+                                 android:layout_height="wrap_content"
+                                 android:background="@null"
+                                 android:padding="5dp"
+                                 android:scaleType="fitCenter"
+                                 android:src="@mipmap/samle_search"/>
+                    <View android:layout_width="90dp"
+                          android:layout_height="0dp"/>
+                    <ImageButton android:layout_width="50dp"
+                                 android:layout_height="wrap_content"
+                                 android:background="@null"
+                                 android:padding="5dp"
+                                 android:scaleType="fitCenter"
+                                 android:src="@mipmap/add"/>
+                </LinearLayout>
+            </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main"/>
+    <include layout="@layout/content_main"
+             android:background="@android:color/white"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
