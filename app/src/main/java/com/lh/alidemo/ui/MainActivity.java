@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     showToast("1");
                     mState = CollapsingToolbarLayoutState.EXPANDED;
                     lin2.setVisibility(View.VISIBLE);
+                    mRecyclerView.setVisibility(View.VISIBLE);
 
                 } else if (verticalOffset < mBarLayout.getTotalScrollRange()) {
                     showToast("2");
