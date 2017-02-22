@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="?attr/colorPrimary"
     android:fitsSystemWindows="true"
-    tools:context="com.lh.alidemo.MainActivity">
+    tools:context=".ui.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -17,12 +17,12 @@
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/colllayout"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="130dp"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:statusBarScrim="@android:color/holo_purple">
             <LinearLayout android:layout_width="match_parent"
-                          android:layout_height="150dp"
+                          android:layout_height="100dp"
                           android:layout_gravity="bottom"
                           android:gravity="center"
                           android:orientation="horizontal"
@@ -34,8 +34,8 @@
                     android:gravity="center"
                     android:orientation="vertical">
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:src="@mipmap/img_sao"/>
                     <TextView android:layout_width="wrap_content"
                               android:layout_height="wrap_content"
@@ -50,8 +50,8 @@
                     android:gravity="center"
                     android:orientation="vertical">
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:src="@mipmap/img_fu"/>
                     <TextView android:layout_width="wrap_content"
                               android:layout_height="wrap_content"
@@ -66,8 +66,8 @@
                     android:gravity="center"
                     android:orientation="vertical">
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:src="@mipmap/img_ka"/>
                     <TextView android:layout_width="wrap_content"
                               android:layout_height="wrap_content"
@@ -82,8 +82,8 @@
                     android:gravity="center"
                     android:orientation="vertical">
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:src="@mipmap/img_gps"/>
                     <TextView android:layout_width="wrap_content"
                               android:layout_height="wrap_content"
@@ -96,12 +96,12 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 app:layout_collapseMode="pin">
                 <LinearLayout
                     android:id="@+id/lin2"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:orientation="horizontal"
                     android:visibility="gone">
                     <Button android:layout_width="0dp"
@@ -125,7 +125,7 @@
                                  android:src="@mipmap/add"/>
                 </LinearLayout>
                 <LinearLayout android:layout_width="match_parent"
-                              android:layout_height="50dp"
+                              android:layout_height="30dp"
                               android:orientation="horizontal">
                     <ImageButton android:layout_width="50dp"
                                  android:layout_height="wrap_content"
@@ -160,18 +160,64 @@
             </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.CollapsingToolbarLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="100dp"
+                      android:background="#ffffff"
+                      android:orientation="vertical">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="50dp"
+                          android:orientation="horizontal">
+                <ImageButton android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:background="@null"
+                             android:src="@mipmap/b1"/>
+                <ImageButton android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:background="@null"
+                             android:src="@mipmap/b1"/>
+                <ImageButton android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:background="@null"
+                             android:src="@mipmap/b1"/>
+                <ImageButton android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:background="@null"
+                             android:src="@mipmap/b1"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="50dp"
+                          android:orientation="horizontal">
+                <ImageButton android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:background="@null"
+                             android:src="@mipmap/b1"/>
+                <ImageButton android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:background="@null"
+                             android:src="@mipmap/b1"/>
+                <ImageButton android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:background="@null"
+                             android:src="@mipmap/b1"/>
+                <ImageButton android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:background="@null"
+                             android:src="@mipmap/b1"/>
+            </LinearLayout>
+
+        </LinearLayout>
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main"
-             android:background="@android:color/white"/>
+    <include layout="@layout/content_main"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email"/>
 
 </android.support.design.widget.CoordinatorLayout>

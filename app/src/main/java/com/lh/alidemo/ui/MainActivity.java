@@ -1,16 +1,21 @@
-package com.lh.alidemo;
+package com.lh.alidemo.ui;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ButtonBarLayout;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import com.lh.alidemo.R;
+import com.lh.alidemo.adapter.RecyAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ButtonBarLayout mButtonBarLayout;
     Toolbar mToolbar;
     LinearLayout lin2;
+    XRecyclerView mRecyclerView;
 
     private enum CollapsingToolbarLayoutState {
         EXPANDED,
@@ -26,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
         INTERNEDIATE
     }
 
+    Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            mRecyclerView.refreshComplete();
+        }
+    };
     private CollapsingToolbarLayoutState mState;
 
     @Override
@@ -36,11 +49,26 @@ public class MainActivity extends AppCompatActivity {
         mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.colllayout);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         lin2 = (LinearLayout) findViewById(R.id.lin2);
+        mRecyclerView = (XRecyclerView) findViewById(R.id.recy);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(new RecyAdapter(this));
+        mRecyclerView.setLoadingMoreEnabled(false);
+        mRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                mHandler.sendEmptyMessageDelayed(0, 1500);
+            }
+
+            @Override
+            public void onLoadMore() {
+
+            }
+        });
 
         mBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                showToast(verticalOffset+"");
+                showToast(verticalOffset + "");
                 if (verticalOffset == 0) {
                     showToast("1");
                     mState = CollapsingToolbarLayoutState.EXPANDED;
@@ -59,14 +87,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     Toast mToast = null;//将此参数设成全局
